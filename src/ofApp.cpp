@@ -1,5 +1,7 @@
 #include "ofApp.h"
 
+#define BLEND_ADVANCED_COHERENT_KHR                     0x9285
+
 #define MULTIPLY_KHR                                    0x9294
 #define SCREEN_KHR                                      0x9295
 #define OVERLAY_KHR                                     0x9296
@@ -62,6 +64,10 @@ void ofApp::draw(){
 	case HSL_SATURATION_KHR: glBlendEquation(HSL_SATURATION_KHR); break;
 	case HSL_COLOR_KHR: glBlendEquation(HSL_COLOR_KHR); break;
 	case HSL_LUMINOSITY_KHR: glBlendEquation(HSL_LUMINOSITY_KHR); break;
+	}
+
+	if (_blendmode != 0 && _GL_KHR_blend_equation_advanced_coherent) {
+		glEnable(BLEND_ADVANCED_COHERENT_KHR);
 	}
 
 	srand(5);
