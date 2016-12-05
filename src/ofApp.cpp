@@ -27,10 +27,10 @@ void ofApp::setup() {
 		const GLubyte *e = glGetStringi(GL_EXTENSIONS, i);
 		printf("%s\n", e);
 
-		if (strcmp((const char *)e, "GL_KHR_blend_equation_advanced")) {
+		if (strcmp((const char *)e, "GL_KHR_blend_equation_advanced") == 0) {
 			_GL_KHR_blend_equation_advanced = true;
 		}
-		if (strcmp((const char *)e, "GL_KHR_blend_equation_advanced_coherent")) {
+		if (strcmp((const char *)e, "GL_KHR_blend_equation_advanced_coherent") == 0) {
 			_GL_KHR_blend_equation_advanced_coherent = true;
 		}
 
